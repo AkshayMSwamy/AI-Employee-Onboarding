@@ -1,0 +1,549 @@
+/* ==========================================================================
+   OnboardAI — Bright, Clean & Modern Light Enterprise Design System
+   No dark backgrounds. Light, crisp, airy and professional.
+   Palette:
+     - Global Canvas:        #F8FAFC (Soft cool off-white)
+     - Sidebar & Surfaces:   #FFFFFF (Crisp white)
+     - Primary Brand Accent: #4F46E5 (Modern Indigo)
+     - Primary Text:         #0F172A (Deep slate)
+     - Secondary Text:       #64748B (Muted slate)
+     - Border & Separator:   #E2E8F0 (Subtle clean border)
+     - Soft Blue Accent:     #EEF2FF (Pill / Active / Hover tint)
+     - Success Emerald:      #10B981 / #ECFDF5
+     - Warning Amber:        #F59E0B / #FFFBEB
+     - Error Crimson:        #EF4444 / #FEF2F2
+   ========================================================================== */
+
+/* 1. Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Global Typography & Canvas */
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    color: #0F172A !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.stApp {
+    background-color: #F8FAFC !important;
+}
+
+/* Main Container Sizing & Spacing */
+.main .block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 2.2rem !important;
+    padding-right: 2.2rem !important;
+    max-width: 1280px !important;
+}
+
+/* 3. Header Container — Light, Bright & Clean Welcome Banner (NO dark colors) */
+.header-container {
+    background: #FFFFFF !important;
+    border-radius: 12px !important;
+    padding: 1.6rem 2rem !important;
+    color: #0F172A !important;
+    margin-bottom: 1.8rem !important;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03) !important;
+    border: 1px solid #E2E8F0 !important;
+    border-left: 5px solid #4F46E5 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.header-container::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -50px !important;
+    right: -50px !important;
+    width: 200px !important;
+    height: 200px !important;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.07) 0%, rgba(79, 70, 229, 0) 70%) !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+}
+
+.header-title {
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: #0F172A !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.25 !important;
+}
+
+.header-subtitle {
+    font-size: 0.94rem !important;
+    color: #64748B !important;
+    margin-top: 0.4rem !important;
+    margin-bottom: 0 !important;
+    line-height: 1.5 !important;
+    max-width: 850px !important;
+}
+
+/* 4. Stat Cards (KPI Overview) */
+.stat-card {
+    background: #FFFFFF !important;
+    border-radius: 12px !important;
+    padding: 1.3rem 1.4rem !important;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03) !important;
+    border: 1px solid #E2E8F0 !important;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 18px -2px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03) !important;
+    border-color: #CBD5E1 !important;
+}
+
+.stat-title {
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    font-weight: 600 !important;
+    color: #64748B !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.stat-value {
+    font-size: 2.15rem !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.stat-subtext {
+    font-size: 0.82rem !important;
+    color: #64748B !important;
+    margin-top: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    font-weight: 500 !important;
+}
+
+/* Distinct Top-Border Accent Colors */
+.stat-card.blue { border-top: 3.5px solid #4F46E5 !important; }
+.stat-card.emerald { border-top: 3.5px solid #10B981 !important; }
+.stat-card.amber { border-top: 3.5px solid #F59E0B !important; }
+.stat-card.rose { border-top: 3.5px solid #EF4444 !important; }
+.stat-card.purple { border-top: 3.5px solid #8B5CF6 !important; }
+.stat-card.slate { border-top: 3.5px solid #64748B !important; }
+
+/* 5. Section Titles and Dividers */
+.section-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+
+.section-title {
+    font-size: 1.18rem !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 0.8rem !important;
+    letter-spacing: -0.015em !important;
+}
+
+/* 6. Notice, Badge & Disclaimer Callouts */
+.info-callout {
+    background: #F0FDF4 !important;
+    border: 1px solid #BBF7D0 !important;
+    border-left: 4px solid #10B981 !important;
+    padding: 0.85rem 1.2rem !important;
+    border-radius: 10px !important;
+    color: #166534 !important;
+    font-size: 0.88rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.5 !important;
+}
+
+.info-callout strong {
+    color: #14532D !important;
+}
+
+.disclaimer-callout {
+    background: #FFFBEB !important;
+    border: 1px solid #FDE68A !important;
+    border-left: 4px solid #F59E0B !important;
+    padding: 0.85rem 1.2rem !important;
+    border-radius: 10px !important;
+    color: #92400E !important;
+    font-size: 0.86rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1.5 !important;
+}
+
+.feature-placeholder {
+    background: #FFFFFF !important;
+    border: 2px dashed #CBD5E1 !important;
+    border-radius: 14px !important;
+    padding: 3.5rem 2rem !important;
+    text-align: center !important;
+    color: #64748B !important;
+    margin-top: 1.5rem !important;
+}
+
+/* 7. Sidebar — Clean White Background & Modern Indigo Accents */
+section[data-testid="stSidebar"] {
+    background-color: #FFFFFF !important;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 1.4rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+}
+
+/* Sidebar Radio Group transformed to sleek navigation list */
+section[data-testid="stSidebar"] div[role="radiogroup"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] > label {
+    padding: 0.62rem 0.85rem !important;
+    border-radius: 8px !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    border-left: 3px solid transparent !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease-in-out !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+/* Hide native circular radio dot */
+section[data-testid="stSidebar"] div[role="radiogroup"] > label > div:first-child {
+    display: none !important;
+}
+
+/* Hover state on navigation item */
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+}
+
+/* Active / Checked Navigation Item */
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:has(input:checked),
+section[data-testid="stSidebar"] div[role="radiogroup"] > label[data-checked="true"] {
+    background-color: #EEF2FF !important;
+    color: #4F46E5 !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #4F46E5 !important;
+}
+
+/* Sidebar Branding Card */
+.sidebar-brand-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.3rem 0 0.8rem 0 !important;
+}
+
+.sidebar-logo-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    background: #EEF2FF !important;
+    border: 1px solid #C7D2FE !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.35rem !important;
+}
+
+.sidebar-brand-title {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 0 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+}
+
+.sidebar-brand-tagline {
+    font-size: 0.74rem !important;
+    color: #64748B !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* Sidebar Alert Badge */
+.sidebar-alert-badge {
+    background: #FEF2F2 !important;
+    border: 1px solid #FECACA !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 0.85rem !important;
+    margin: 0.4rem 0 0.8rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    transition: transform 0.15s ease !important;
+}
+
+.sidebar-alert-text {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    color: #991B1B !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+}
+
+.sidebar-alert-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background-color: #EF4444 !important;
+    display: inline-block !important;
+}
+
+.sidebar-alert-action {
+    background: #EF4444 !important;
+    color: #FFFFFF !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    padding: 0.15rem 0.45rem !important;
+    border-radius: 9999px !important;
+    letter-spacing: 0.04em !important;
+}
+
+/* Sidebar System Footer */
+.sidebar-system-footer {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 0.9rem !important;
+    font-size: 0.78rem !important;
+    color: #64748B !important;
+    line-height: 1.4 !important;
+}
+
+.status-dot-pulse {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #10B981 !important;
+    display: inline-block !important;
+    margin-right: 0.35rem !important;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* 8. Streamlit Form Inputs & Controls */
+div[data-baseweb="input"],
+div[data-baseweb="select"] > div,
+div[data-baseweb="textarea"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+    color: #0F172A !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within,
+div[data-baseweb="select"] > div:focus-within,
+div[data-baseweb="textarea"]:focus-within {
+    border-color: #4F46E5 !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12) !important;
+}
+
+/* 9. Buttons (Primary & Secondary Enterprise Styling) */
+button[kind="primary"] {
+    background: #4F46E5 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #4338CA !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1.1rem !important;
+    box-shadow: 0 1px 2px 0 rgba(79, 70, 229, 0.25) !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+button[kind="primary"]:hover {
+    background: #4338CA !important;
+    border-color: #3730A3 !important;
+    box-shadow: 0 4px 12px 0 rgba(79, 70, 229, 0.28) !important;
+    transform: translateY(-1px) !important;
+}
+
+button[kind="secondary"],
+.stButton > button:not([kind="primary"]) {
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1rem !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.stButton > button:not([kind="primary"]):hover {
+    background: #F8FAFC !important;
+    border-color: #94A3B8 !important;
+    color: #0F172A !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Download Buttons */
+.stDownloadButton > button {
+    background: #FFFFFF !important;
+    color: #4F46E5 !important;
+    border: 1px solid #C7D2FE !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.86rem !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.stDownloadButton > button:hover {
+    background: #EEF2FF !important;
+    border-color: #4F46E5 !important;
+    color: #3730A3 !important;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* 10. DataFrames & Tables */
+div[data-testid="stDataFrame"],
+div[data-testid="stTable"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02) !important;
+}
+
+/* 11. Tabs */
+div[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    border-bottom: 1px solid #E2E8F0 !important;
+    gap: 0.5rem !important;
+    background: transparent !important;
+}
+
+div[data-testid="stTabs"] [data-baseweb="tab"] {
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    color: #64748B !important;
+    padding: 0.7rem 1.1rem !important;
+    border-radius: 6px 6px 0 0 !important;
+    border-bottom: 2px solid transparent !important;
+    background: transparent !important;
+    transition: color 0.15s ease !important;
+}
+
+div[data-testid="stTabs"] [data-baseweb="tab"]:hover {
+    color: #0F172A !important;
+}
+
+div[data-testid="stTabs"] [aria-selected="true"] {
+    color: #4F46E5 !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #4F46E5 !important;
+}
+
+/* 12. Progress Bars */
+div[data-testid="stProgress"] > div > div > div > div {
+    background: linear-gradient(90deg, #4F46E5 0%, #6366F1 100%) !important;
+    border-radius: 9999px !important;
+}
+
+div[data-testid="stProgress"] > div > div > div {
+    background-color: #EEF2FF !important;
+    border-radius: 9999px !important;
+}
+
+/* 13. File Upload Area */
+div[data-testid="stFileUploader"] section {
+    background-color: #FAFAFF !important;
+    border: 2px dashed #C7D2FE !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    transition: all 0.2s ease !important;
+}
+
+div[data-testid="stFileUploader"] section:hover {
+    border-color: #4F46E5 !important;
+    background-color: #EEF2FF !important;
+}
+
+/* 14. Expanders */
+div[data-testid="stExpander"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.8rem !important;
+}
+
+div[data-testid="stExpander"] summary:hover {
+    color: #4F46E5 !important;
+}
+
+/* 15. Streamlit Alerts & Notifications */
+div[data-testid="stNotificationSuccess"],
+.stAlert:has([data-testid="stNotificationSuccess"]) {
+    background-color: #ECFDF5 !important;
+    color: #065F46 !important;
+    border: 1px solid #A7F3D0 !important;
+    border-left: 4px solid #10B981 !important;
+}
+
+div[data-testid="stNotificationWarning"],
+.stAlert:has([data-testid="stNotificationWarning"]) {
+    background-color: #FFFBEB !important;
+    color: #92400E !important;
+    border: 1px solid #FDE68A !important;
+    border-left: 4px solid #F59E0B !important;
+}
+
+div[data-testid="stNotificationError"],
+.stAlert:has([data-testid="stNotificationError"]) {
+    background-color: #FEF2F2 !important;
+    color: #991B1B !important;
+    border: 1px solid #FECACA !important;
+    border-left: 4px solid #EF4444 !important;
+}
+
+div[data-testid="stNotificationInfo"],
+.stAlert:has([data-testid="stNotificationInfo"]) {
+    background-color: #EFF6FF !important;
+    color: #1E40AF !important;
+    border: 1px solid #BFDBFE !important;
+    border-left: 4px solid #3B82F6 !important;
+}
+
+/* 16. Streamlit Native Metrics */
+div[data-testid="stMetricValue"] {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #64748B !important;
+    font-size: 0.82rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+}
